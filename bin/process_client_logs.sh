@@ -17,4 +17,6 @@ cat var/log/secure* | awk '/Failed password for/ {
   username=groups[1];
   IP=groups[2];
   print dateInfo, username, IP;
-}' > failed_login_data.txt
+}' | tr -s " " > failed_login_data.txt
+
+#The tr command will replace all duplicate spaces with a singular space
