@@ -15,6 +15,6 @@ cat "$logsDir"/*/failed_login_data.txt \
   > "$tmpFile"
 
 #Takes the data in the temp file and adds the correct header and footer,
-#saving the result into data/username_dist.html
-./bin/wrap_contents.sh "$tmpFile" html_components/username_dist data/username_dist.html
+#saving the result into the logsDir directory
+./bin/wrap_contents.sh "$tmpFile" html_components/username_dist "$logsDir"/username_dist.html
 rm "$tmpFile"
